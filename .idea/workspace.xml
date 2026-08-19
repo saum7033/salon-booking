@@ -4,19 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fcec80f-a958-4865-960c-006c51c48cdc" name="Changes" comment="" />
+    <list default="true" id="6fcec80f-a958-4865-960c-006c51c48cdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/modal/SalonReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/modal/SalonReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/impl/BookingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka_server/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka_server/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salon-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-offering/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="payment" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3I6LPXyZD8DtBAdtDQcxcprdDs0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,10 +49,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.EurekaServerApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "payment",
+    "git-widget-placeholder": "eureka",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>

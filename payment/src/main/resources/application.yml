@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: payment
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment-db
+    username: postgres
+    password: Saumya@70
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8084
+
+razorpay:
+  api:
+    key: rzp_test_TRG6P3EfWMDgJw
+    secret: XyGNxAhRw6iBYedAlHESRzPY
+
+stripe:
+  api:
+    key: "striper api key"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8070/eureka/"

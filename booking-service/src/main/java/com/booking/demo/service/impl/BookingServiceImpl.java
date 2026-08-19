@@ -30,7 +30,7 @@ public class BookingServiceImpl implements BookingService {
         LocalDateTime bookingStartTime = booking.getStartTime();
         LocalDateTime bookingEndTime = bookingStartTime.plusMinutes(totalDuration);
         Boolean isSlotAvailable = isTimeSlotAvailable(salon,bookingStartTime,bookingEndTime);
-        int totalPrice = serviceDTOSet.stream()
+        long totalPrice = serviceDTOSet.stream()
                 .mapToInt(ServiceDTO::getPrice)
                 .sum();
         Set<Long> idList = serviceDTOSet.stream()
@@ -106,8 +106,8 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public SalonReport getSalonReport(Long salonId) {
         List<Booking>  bookings = getBookingsBySalon(salonId);
-        int totalEarnings = bookings.stream()
-                .mapToInt(Booking::getTotalPrice)
+        long totalEarnings = bookings.stream()
+                .mapToLong(Booking::getTotalPrice)
                 .sum();
         Integer totalBooking = bookings.size();
         List<Booking> cancelledBookings = bookings.stream()
@@ -119,8 +119,7 @@ public class BookingServiceImpl implements BookingService {
         SalonReport report = new SalonReport();
         report.setSalonId(salonId);
         report.setCancelledBookings(cancelledBookings.size());
-        report.setTotalBookings(totalEarnings);
-        report.setTotalEarnings(totalEarnings);
+        report.setTotalBookings((int)totalEarnings);
         report.setTotalRefund(totalRefund);
         report.setTotalBookings(totalBooking);
         return report;
