@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo
+    name: salon-service
 
   datasource:
     url: jdbc:postgresql://localhost:5432/salon-db
