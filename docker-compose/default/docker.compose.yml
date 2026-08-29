@@ -1,0 +1,228 @@
+services:
+
+  userdb:
+    image: postgres:16
+    container_name: userdb
+    ports:
+      - "3301:5432"
+    environment:
+      POSTGRES_DB: microservices
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Saumya@70
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - saum
+
+  bookingdb:
+    image: postgres:16
+    container_name: bookingdb
+    ports:
+      - "3302:5432"
+    environment:
+      POSTGRES_DB: booking-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Saumya@70
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - saum
+
+  salondb:
+    image: postgres:16
+    container_name: salondb
+    ports:
+      - "3303:5432"
+    environment:
+      POSTGRES_DB: salon-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Saumya@70
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - saum
+
+  paymentdb:
+    image: postgres:16
+    container_name: paymentdb
+    ports:
+      - "3304:5432"
+    environment:
+      POSTGRES_DB: payment-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Saumya@70
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - saum
+
+  servicesdb:
+    image: postgres:16
+    container_name: servicesdb
+    ports:
+      - "3305:5432"
+    environment:
+      POSTGRES_DB: services-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Saumya@70
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - saum
+
+  eurekaserver:
+    image: "saum70/eureka-server-yt:v1"
+    ports:
+      - "8070:8070"
+    container_name: eurekaserver
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - saum
+
+  bookingservice:
+    image: "booking-service-fixed:latest"
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://bookingdb:5432/booking-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      bookingdb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: bookingservice
+    networks:
+      - saum
+
+  categoryservice:
+    image: "category-service-fixed:latest"
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://salondb:5432/salon-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      salondb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: categoryservice
+    networks:
+      - saum
+
+  gatewayserver:
+    image: "saum70/gateway-server-yt:v1"
+    ports:
+      - "8088:8088"
+    environment:
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      eurekaserver:
+        condition: service_started
+    container_name: gatewayserver
+    networks:
+      - saum
+
+  paymentservice:
+    image: "payment:0.0.1-SNAPSHOT"
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://paymentdb:5432/payment-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      paymentdb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: paymentservice
+    networks:
+      - saum
+
+  salonservice:
+    image: "salon-service-fixed:latest"
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://salondb:5432/salon-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      salondb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: salonservice
+    networks:
+      - saum
+
+  serviceoffering:
+    image: "service-offering:0.0.1-SNAPSHOT"
+    ports:
+      - "8085:8085"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://servicesdb:5432/services-db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      servicesdb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: serviceoffering
+    networks:
+      - saum
+
+  userservice:
+    image: "user-service:0.0.1-SNAPSHOT"
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://userdb:5432/microservices
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Saumya@70
+      EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+    depends_on:
+      userdb:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_started
+    container_name: userservice
+    networks:
+      - saum
+
+networks:
+  saum:
+    driver: "bridge"
