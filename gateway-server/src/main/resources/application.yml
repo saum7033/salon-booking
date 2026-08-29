@@ -9,45 +9,35 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
 
       routes:
         - id: booking-service-route
-          uri: lb://BOOKING-SERVICE
+          uri: http://bookingservice:8083
           predicates:
             - Path=/api/bookings/**
 
         - id: category-service-route
-          uri: lb://CATEGORY-SERVICE
+          uri: http://categoryservice:8082
           predicates:
-            - Path=/api/categories/**
+            - Path=/api/category/**
 
         - id: payment-service-route
-          uri: lb://PAYMENT
+          uri: http://paymentservice:8084
           predicates:
             - Path=/api/payments/**
 
         - id: salon-service-route
-          uri: lb://SALON-SERVICE
+          uri: http://salonservice:8080
           predicates:
-            - Path=/salons/**,/api/salons/**,/api/admin/salons/**
+            - Path=/api/salon/**
 
         - id: service-offering-route
-          uri: lb://SERVICE-OFFERING
+          uri: http://serviceoffering:8085
           predicates:
             - Path=/api/service-offering/**
 
         - id: user-service-route
-          uri: lb://USER-SERVICE
+          uri: http://userservice:8086
           predicates:
-            - Path=/auth/**,/api/admin/users/**,/api/users/**
-
-eureka:
-  instance:
-    prefer-ip-address: true
-
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: "http://localhost:8070/eureka/"
+            - Path=/api/user/**

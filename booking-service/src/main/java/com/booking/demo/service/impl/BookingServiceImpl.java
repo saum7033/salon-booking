@@ -65,12 +65,20 @@ public class BookingServiceImpl implements BookingService {
     }
     @Override
     public List<Booking> getBookingsByCustomer(Long customerId) {
-        return bookingRepository.findByCustomerId(customerId);
+        List<Booking> bookings = bookingRepository.findByCustomerId(customerId);
+        if (bookings == null || bookings.isEmpty()) {
+            return List.of();
+        }
+        return bookings;
     }
 
     @Override
     public List<Booking> getBookingsBySalon(Long salonId) {
-        return bookingRepository.findBySalonId(salonId);
+        List<Booking> bookings = bookingRepository.findBySalonId(salonId);
+        if (bookings == null || bookings.isEmpty()) {
+            return List.of();
+        }
+        return bookings;
     }
 
     @Override
@@ -119,7 +127,7 @@ public class BookingServiceImpl implements BookingService {
         SalonReport report = new SalonReport();
         report.setSalonId(salonId);
         report.setCancelledBookings(cancelledBookings.size());
-        report.setTotalBookings((int)totalEarnings);
+        report.setTotalEarnings(totalEarnings);
         report.setTotalRefund(totalRefund);
         report.setTotalBookings(totalBooking);
         return report;

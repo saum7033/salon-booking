@@ -25,7 +25,7 @@ public class CategoryController {
         return ResponseEntity.ok(categories);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<Category> getCategoryById(
             @PathVariable Long id
     )throws Exception{

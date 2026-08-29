@@ -49,13 +49,6 @@ public class SalonController {
         return ResponseEntity.ok(salonDTOS);
     }
 
-    @GetMapping("/{salonId}")
-    public ResponseEntity<SalonDTO> getSalonById(@PathVariable Long salonId)throws Exception{
-        Salon salon = salonService.getSalonById(salonId);
-        SalonDTO salonDTO = SalonMapper.mapToDTO(salon);
-        return ResponseEntity.ok(salonDTO);
-    }
-
     @GetMapping("/search")
     public ResponseEntity<List<SalonDTO>> searchSalons(
             @RequestParam("city") String city
@@ -68,11 +61,21 @@ public class SalonController {
         return ResponseEntity.ok(salonDTOS);
     }
 
-    @GetMapping("/owner")
+    @GetMapping("/owner/{ownerId}")
     public ResponseEntity<SalonDTO> getSalonByOwnerId(@PathVariable Long ownerId)throws Exception{
         UserDTO userDTO = new UserDTO();
         userDTO.setId(1L);
         Salon salon = salonService.getSalonByOwnerId(userDTO.getId());
+        if (salon == null) {
+            return ResponseEntity.notFound().build();
+        }
+        SalonDTO salonDTO = SalonMapper.mapToDTO(salon);
+        return ResponseEntity.ok(salonDTO);
+    }
+
+    @GetMapping("/{salonId}")
+    public ResponseEntity<SalonDTO> getSalonById(@PathVariable Long salonId)throws Exception{
+        Salon salon = salonService.getSalonById(salonId);
         SalonDTO salonDTO = SalonMapper.mapToDTO(salon);
         return ResponseEntity.ok(salonDTO);
     }
