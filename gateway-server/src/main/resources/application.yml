@@ -11,6 +11,14 @@ spring:
         locator:
           enabled: false
 
+    security:
+      oauth2:
+        resource server:
+          jwt:
+            jwt-set-url: "http://localhost:8080/realms/master/protocol/openid-coneect/certs"
+
+
+
       routes:
         - id: booking-service-route
           uri: http://bookingservice:8083

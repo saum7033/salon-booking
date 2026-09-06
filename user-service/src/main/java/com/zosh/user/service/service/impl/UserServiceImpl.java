@@ -2,6 +2,7 @@ package com.zosh.user.service.service.impl;
 
 import com.zosh.user.service.exception.UserException;
 import com.zosh.user.service.model.User;
+import com.zosh.user.service.payload.dto.KeyCloakUserDTO;
 import com.zosh.user.service.repository.UserRepository;
 import com.zosh.user.service.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final KeyClockService keyClockService;
     @Override
     public User createUser(User user) {
         return userRepository.save(user);
@@ -54,5 +56,12 @@ public class UserServiceImpl implements UserService {
         existingUser.setEmail(user.getEmail());
         existingUser.setRole(user.getRole());
         return userRepository.save(existingUser);
+    }
+
+    @Override
+    public User getUserFromJwt(String jwt) throws Exception {
+        KeyCloakUserDTO keyCloakUserDTO = keyClockService.fetchUserProfileByJwt(jwt);
+        User user = userRepository.findByEmail(keyCloakUserDTO.getEmail());
+        return user;
     }
 }
