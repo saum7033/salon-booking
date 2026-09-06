@@ -23,6 +23,12 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/api/user/profile")
+    public ResponseEntity<User> getUserProfile(@RequestHeader("Authorization") String jwt) throws Exception {
+        User createdUser = userService.getUserFromJwt(jwt);
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+    }
+
     @PostMapping("/api/user")
     public ResponseEntity<User> createUser(@RequestBody User user){
         User createdUser = userService.createUser(user);

@@ -34,8 +34,43 @@ public class KeyClockService {
     private final RestTemplate restTemplate;
 
     public void createUser(SignUpDTO signUpDTO) throws Exception {
-        // Mock user creation - skip Keycloak for testing
-        System.out.println("User created successfully (mock): " + signUpDTO.getUsername());
+        String ACCESS_TOKEN = getAdminAccessToken(username, password, GRANT_TYPE, null).getAccessToken();
+
+        Credential credential = new Credential();
+        credential.setTemporary(false);
+        credential.setType("password");
+        credential.setValue(signUpDTO.getPassword());
+
+        UserRequest userRequest = new UserRequest();
+        userRequest.setUsername(signUpDTO.getUsername());
+        userRequest.setEmail(signUpDTO.getEmail());
+        userRequest.setEnabled(true);
+        userRequest.setFirstName(signUpDTO.getFullName());
+        userRequest.getCredentials().add(credential);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setBearerAuth(ACCESS_TOKEN);
+
+        HttpEntity<UserRequest> requestHttpEntity = new HttpEntity<>(userRequest, headers);
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                KEYCLOAK_ADMIN_API,
+                HttpMethod.POST,
+                requestHttpEntity,
+                String.class
+        );
+        if (response.getStatusCode() == HttpStatus.CREATED) {
+            System.out.println("user created successfully");
+            KeyCloakUserDTO user = fetchFirstUserByUsername(signUpDTO.getUsername(), ACCESS_TOKEN);
+            KeyCloakRole role = getRoleByName(clientId, ACCESS_TOKEN, signUpDTO.getRole().toString());
+            List<KeyCloakRole> roles = new ArrayList<>();
+            roles.add(role);
+            assignRoleToUser(user.getId(), clientId, roles, ACCESS_TOKEN);
+        } else {
+            System.out.println("user creation failed");
+            throw new Exception(response.getBody());
+        }
     }
         public TokenResponse getAdminAccessToken(String username, String password, String grantType, String refreshToken) throws Exception {
             // Mock response for testing without Keycloak
@@ -99,4 +134,14 @@ public class KeyClockService {
                 throw new Exception("Failed to assign new role "+ e.getMessage());
             }
         }
+        public KeyCloakUserDTO fetchUserProfileByJwt(String token) throws Exception{
+            // Mock response for testing without Keycloak
+            KeyCloakUserDTO userDTO = new KeyCloakUserDTO();
+            userDTO.setEmail("john.doe@example.com");
+            userDTO.setUsername("johndoe");
+            userDTO.setFirstName("John");
+            userDTO.setLastName("Doe");
+            userDTO.setId("123");
+            return userDTO;
+    }
 }
