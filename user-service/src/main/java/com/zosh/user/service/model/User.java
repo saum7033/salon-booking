@@ -1,6 +1,7 @@
 package com.zosh.user.service.model;
 
 
+import com.zosh.user.service.domain.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -32,7 +33,7 @@ public class User {
     private String userName;
     private String phone;
     @NotBlank(message = "Role is mandatory")
-    private String role;
+    private UserRole role;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
