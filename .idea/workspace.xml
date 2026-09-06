@@ -5,36 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a5d4164-f7f0-48a5-9d78-3173e182a7e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose/default/docker.compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/domain/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/Credential.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/KeyCloakRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/KeyCloakUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/LoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/SignUpDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/dto/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/response/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/payload/response/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/service/impl/KeyClockService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/modal/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/modal/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/impl/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/impl/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/impl/PaymentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="gateway" />
+        <entry key="$PROJECT_DIR$" value="docker" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,7 +57,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;docker&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;keyClock&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
