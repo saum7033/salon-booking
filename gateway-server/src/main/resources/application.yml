@@ -15,7 +15,7 @@ spring:
       oauth2:
         resource server:
           jwt:
-            jwt-set-url: "http://localhost:8080/realms/master/protocol/openid-coneect/certs"
+            jwk-set-uri: "http://localhost:8080/realms/master/protocol/openid-connect/certs"
 
 
 
