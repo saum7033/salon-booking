@@ -14,6 +14,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Saumya@70
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
 
       - name: Checkout code
@@ -26,8 +40,16 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Create databases
+        run: |
+          PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"booking-db\";"
+          PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"salon-db\";"
+          PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"payment-db\";"
+          PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"services-db\";"
+          PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE microservices;"
+
       - name: Build booking-service
-        run: mvn -f booking-service/pom.xml clean verify
+        run: mvn -f booking-service/pom.xml clean install
 
       - name: Build category-service
         run: mvn -f category-service/pom.xml clean verify
