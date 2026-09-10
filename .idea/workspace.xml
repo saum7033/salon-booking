@@ -5,51 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a5d4164-f7f0-48a5-9d78-3173e182a7e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/domain/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/dto/PaymentLinkResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/client/CategoryFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/client/PaymentFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/client/SalonFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/client/ServiceOfferingFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/service/client/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/dto/CategoryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/client/SalonFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/client/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/CategoryFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/SalonFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/ServiceOfferingFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/service/client/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/service/client/CategoryFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/service/client/SalonFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/service/client/UserFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/controller/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/dto/BookingDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/dto/BookingDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/mapper/BookingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/com/booking/demo/mapper/BookingMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/CategoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/CategoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/SalonCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/SalonCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/serviceimpl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/service/serviceimpl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/PaymentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/PaymentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/SalonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/salon-service/src/main/java/com/example/demo/controller/SalonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/ServiceOfferingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/ServiceOfferingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/controller/SalonServiceOfferingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/controller/SalonServiceOfferingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/controller/ServiceOfferingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-offering/src/main/java/com/example/service/offering/controller/ServiceOfferingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/zosh/user/service/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
