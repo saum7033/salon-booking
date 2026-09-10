@@ -6,6 +6,7 @@ import com.example.payment.payload.dto.BookingDTO;
 import com.example.payment.payload.dto.UserDTO;
 import com.example.payment.payload.response.PaymentLinkResponse;
 import com.example.payment.service.PaymentService;
+import com.example.service.offering.service.client.UserFeignClient;
 import com.razorpay.RazorpayException;
 import com.stripe.exception.StripeException;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +18,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class PaymentController {
     private final PaymentService paymentService;
+    private final UserFeignClient userFeignClient;
 
     @PostMapping("/create")
-    public ResponseEntity<PaymentLinkResponse> createPaymentLink(@RequestBody BookingDTO booking, @RequestParam PaymentMethod paymentMethod) throws RazorpayException, StripeException {
-        UserDTO user = new UserDTO();
-        user.setFullName("Saumya");
-        user.setEmail("rajsaumya7033@gmail.com");
-        user.setId(1L);
+    public ResponseEntity<PaymentLinkResponse> createPaymentLink(@RequestBody BookingDTO booking, @RequestParam PaymentMethod paymentMethod,
+                                                                 @RequestHeader("Authorization")String jwt) throws Exception {
+        UserDTO user = userFeignClient.getUserProfile(jwt).getBody();
         PaymentLinkResponse res = paymentService.createOrder(user,booking,paymentMethod);
         return ResponseEntity.ok(res);
     }

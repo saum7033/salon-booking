@@ -5,7 +5,10 @@ import com.category.modal.Category;
 import com.category.repository.CategoryRepository;
 import com.category.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Set;
 
@@ -43,5 +46,22 @@ public class CategoryServiceImpl implements CategoryService {
             throw new Exception("You don't have permission to delete this category");
         }
         categoryRepository.deleteById(id);
+    }
+
+    @Override
+    public Category findByIdAndSalonId(Long id, Long salonId) throws Exception {
+        Category category = categoryRepository.findByIdAndSalonId(id,salonId);
+        if(category == null){
+            throw new Exception("category not found..");
+        }
+        return category;
+    }
+
+    @GetMapping("/salon/{salonId}/category/{id}")
+    public ResponseEntity<Category> getCategoriesByIdAndSalonId(
+            @PathVariable Long id, @PathVariable Long salonId
+    )throws Exception{
+        Category category = categoryRepository.findByIdAndSalonId(id,salonId);
+        return ResponseEntity.ok(category);
     }
 }
