@@ -9,8 +9,8 @@ import com.booking.demo.modal.SalonReport;
 import com.booking.demo.service.BookingService;
 import com.booking.demo.service.client.PaymentFeignClient;
 import com.booking.demo.service.client.ServiceOfferingFeignClient;
-import com.example.service.offering.service.client.SalonFeignClient;
-import com.example.service.offering.service.client.UserFeignClient;
+import com.booking.demo.service.client.SalonFeignClient;
+import com.booking.demo.service.client.UserFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +42,7 @@ public class BookingController {
         UserDTO user = userFeignClient.getUserProfile(jwt).getBody();
         SalonDTO salon = salonFeignClient.getSalonById(salonId).getBody();
 
-        Set<ServiceDTO> serviceDTOSet = serviceOfferingFeignClient.getServicesByIds(bookingRequest.getServicesIds()).getBody();
+        Set<ServiceDTO> serviceDTOSet = serviceOfferingFeignClient.getServicesByIds(bookingRequest.getServiceIds()).getBody();
         if(serviceDTOSet.isEmpty()){
             throw new Exception("service not found..");
         }

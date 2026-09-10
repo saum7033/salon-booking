@@ -1,6 +1,6 @@
 package com.example.service.offering.service.client;
 
-import com.zosh.user.service.model.User;
+import com.example.service.offering.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface UserFeignClient {
 
     @GetMapping("/api/user/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) throws Exception;
+    ResponseEntity<UserDTO> getUserById(
+            @PathVariable("id") Long id
+    ) throws Exception;
 
     @GetMapping("/api/user/profile")
-    public ResponseEntity<User> getUserProfile(
+    ResponseEntity<UserDTO> getUserProfile(
             @RequestHeader("Authorization") String jwt
     ) throws Exception;
 }
