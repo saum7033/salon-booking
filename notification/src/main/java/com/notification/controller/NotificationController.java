@@ -1,0 +1,58 @@
+package com.notification.controller;
+
+import com.notification.mapper.NotificationMapper;
+import com.notification.modal.Notification;
+import com.notification.payload.dto.BookingDTO;
+import com.notification.payload.dto.NotificationDTO;
+import com.notification.service.NotificationService;
+import com.notification.service.client.BookingFeignClient;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/notifications")
+public class NotificationController {
+    private final NotificationService notificationService;
+    private final BookingFeignClient bookingFeignClient;
+
+    @PostMapping
+    public ResponseEntity<NotificationDTO> createNotification(@RequestBody Notification notification)throws Exception{
+        return ResponseEntity.ok(notificationService.createNotification(notification));
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<NotificationDTO>> getNotificationByUserId(@PathVariable Long userId){
+        List<Notification> notifications = notificationService.getAllNotificationByUserId(userId);
+        List<NotificationDTO> notificationDTOS = notifications.stream()
+                .map(notification -> {
+                    BookingDTO bookingDTO = null;
+                    try {
+                        bookingDTO = bookingFeignClient.getBookingById(notification.getBookingId()).getBody();
+                    } catch (Exception e) {
+                        // Log error but continue with null bookingDTO
+                    }
+                    return NotificationMapper.toDTO(notification, bookingDTO);
+                }).collect(Collectors.toList());
+        return ResponseEntity.ok(notificationDTOS);
+    }
+
+    @PutMapping("/{notificationId}/read")
+    public ResponseEntity<NotificationDTO> markNotificationAsRead(
+            @PathVariable Long notificationId
+    )throws Exception{
+        Notification notification = notificationService.markNotificationAsRead(notificationId);
+
+        BookingDTO bookingDTO = null;
+        try {
+            bookingDTO = bookingFeignClient.getBookingById(notification.getBookingId()).getBody();
+        } catch (Exception e) {
+            // Log error but continue with null bookingDTO
+        }
+        return ResponseEntity.ok(NotificationMapper.toDTO(notification, bookingDTO));
+    }
+}

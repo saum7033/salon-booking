@@ -50,6 +50,11 @@ spring:
           predicates:
             - Path=/api/user/**
 
+        - id: notification-service-route
+          uri: http://notification:5007
+          predicates:
+            - Path=/api/notifications/**
+
 eureka:
   instance:
     prefer-ip-address: true

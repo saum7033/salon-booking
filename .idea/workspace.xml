@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a5d4164-f7f0-48a5-9d78-3173e182a7e0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/controller/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/controller/SalonNotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/domain/BookingStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/mapper/NotificationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/modal/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/payload/dto/BookingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/payload/dto/NotificationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/payload/dto/SalonDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/payload/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/repository/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/service/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/service/client/BookingFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/microservices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/microservices.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/SalonCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/category-service/src/main/java/com/category/controller/SalonCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/CategoryFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/CategoryFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/SalonFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/SalonFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/ServiceOfferingFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/java/com/example/payment/service/client/ServiceOfferingFeignClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ci" />
+        <entry key="$PROJECT_DIR$" value="feignClient" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,23 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feignClient&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/monis/Projects/microservices/payment/src/main/java/com/example/payment/service&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "kafka",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/monis/Projects/microservices/notification/src/main/java/com/notification/payload",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\monis\Projects\microservices\notification\src\main\java\com\notification\payload" />
       <recent name="C:\Users\monis\Projects\microservices\payment\src\main\java\com\example\payment\service" />
       <recent name="C:\Users\monis\Projects\microservices\booking-service\src\main\java\com\booking\demo\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.notification.domain" />
       <recent name="com.booking.demo.domain" />
       <recent name="com.booking.demo.dto" />
       <recent name="com.category.service.client" />
