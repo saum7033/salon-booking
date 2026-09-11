@@ -16,7 +16,7 @@ public class Booking {
     private Long id;
     private Long salonId;
     private Long customerId;
-    private LocalDateTime sartTime;
+    private LocalDateTime startTime;
     private LocalDateTime endTime;
 
     @ElementCollection

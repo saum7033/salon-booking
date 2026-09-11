@@ -41,7 +41,7 @@ public class BookingServiceImpl implements BookingService {
         newBooking.setSalonId(salon.getId());
         newBooking.setServiceIds(idList);
         newBooking.setStatus(BookingStatus.PENDING);
-        newBooking.setSartTime(bookingStartTime);
+        newBooking.setStartTime(bookingStartTime);
         newBooking.setEndTime(bookingEndTime);
         newBooking.setTotalPrice(totalPrice);
         return bookingRepository.save(newBooking);
@@ -54,7 +54,7 @@ public class BookingServiceImpl implements BookingService {
         if(bookingStartTime.isBefore(salonOpenTime) || bookingEndTime.isAfter(salonCloseTime)){
             throw new RuntimeException("Booking time must be within salon's working hours");        }
         for(Booking existingBooking : existingBookings){
-            LocalDateTime existingBookingStartTime = existingBooking.getSartTime();
+            LocalDateTime existingBookingStartTime = existingBooking.getStartTime();
             LocalDateTime existingBookingEndTime = existingBooking.getEndTime();
             if(bookingStartTime.isBefore(existingBookingStartTime) && bookingEndTime.isAfter(existingBookingEndTime)){
                 throw new RuntimeException("slot not available, choose different time");            }
@@ -103,7 +103,7 @@ public class BookingServiceImpl implements BookingService {
             return allBookings;
         }
         return allBookings.stream()
-                .filter(booking -> isSameDate(booking.getSartTime(),date) ||
+                .filter(booking -> isSameDate(booking.getStartTime(),date) ||
                         isSameDate(booking.getEndTime(),date))
                 .collect(Collectors.toList());
     }
