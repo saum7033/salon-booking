@@ -22,7 +22,11 @@ public class SalonCategoryController {
     public ResponseEntity<Category> createCategory(
             @RequestBody Category category, @RequestHeader("Authorization") String jwt
     ) throws Exception {
-        UserDTO userDTO = userFeignClient.getUserProfile(jwt).getBody();
+        com.zosh.user.service.model.User user = userFeignClient.getUserProfile(jwt).getBody();
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(user.getId());
+        userDTO.setFullName(user.getFullName());
+        userDTO.setEmail(user.getEmail());
         SalonDTO salonDTO = salonFeignClient.getSalonByOwnerId(userDTO.getId()).getBody();
         Category savedCategory = categoryService.saveCategory(category,salonDTO);
         return ResponseEntity.ok(savedCategory);
@@ -32,7 +36,11 @@ public class SalonCategoryController {
     public ResponseEntity<String> deleteCategory(
             @PathVariable Long id, @RequestHeader("Authorization") String jwt
     )throws Exception{
-        UserDTO userDTO = userFeignClient.getUserProfile(jwt).getBody();
+        com.zosh.user.service.model.User user = userFeignClient.getUserProfile(jwt).getBody();
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(user.getId());
+        userDTO.setFullName(user.getFullName());
+        userDTO.setEmail(user.getEmail());
         SalonDTO salonDTO = salonFeignClient.getSalonByOwnerId(userDTO.getId()).getBody();
         categoryService.deleteCategoryById(id,salonDTO.getId());
         return ResponseEntity.ok("category deleted successfully");

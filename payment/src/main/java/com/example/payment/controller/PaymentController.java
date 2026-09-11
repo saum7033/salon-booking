@@ -6,7 +6,7 @@ import com.example.payment.payload.dto.BookingDTO;
 import com.example.payment.payload.dto.UserDTO;
 import com.example.payment.payload.response.PaymentLinkResponse;
 import com.example.payment.service.PaymentService;
-import com.example.service.offering.service.client.UserFeignClient;
+import com.example.payment.service.client.UserFeignClient;
 import com.razorpay.RazorpayException;
 import com.stripe.exception.StripeException;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +23,12 @@ public class PaymentController {
     @PostMapping("/create")
     public ResponseEntity<PaymentLinkResponse> createPaymentLink(@RequestBody BookingDTO booking, @RequestParam PaymentMethod paymentMethod,
                                                                  @RequestHeader("Authorization")String jwt) throws Exception {
-        UserDTO user = userFeignClient.getUserProfile(jwt).getBody();
-        PaymentLinkResponse res = paymentService.createOrder(user,booking,paymentMethod);
+        com.zosh.user.service.model.User user = userFeignClient.getUserProfile(jwt).getBody();
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(user.getId());
+        userDTO.setFullName(user.getFullName());
+        userDTO.setEmail(user.getEmail());
+        PaymentLinkResponse res = paymentService.createOrder(userDTO,booking,paymentMethod);
         return ResponseEntity.ok(res);
     }
 

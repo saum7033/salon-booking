@@ -1,6 +1,6 @@
 package com.example.payment.service.client;
 
-import com.example.service.offering.dto.CategoryDTO;
+import com.example.payment.payload.dto.CategoryDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
