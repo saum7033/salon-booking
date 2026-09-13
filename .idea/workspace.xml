@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a5d4164-f7f0-48a5-9d78-3173e182a7e0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/controller/ReviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/modal/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/payload/dto/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/payload/dto/ReviewRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/payload/dto/SalonDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/payload/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/repository/ReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/service/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/service/client/SalonFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/service/client/UserFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review/src/main/java/com/review/service/impl/ReviewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/microservices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/microservices.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification/src/test/java/com/notification/NotificationApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification/src/main/java/com/notification/NotificationApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notifications" />
+        <entry key="$PROJECT_DIR$" value="review" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,7 +50,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "review",
+    "git-widget-placeholder": "rabbitMQ",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/monis/Projects/microservices/review/src/main/java/com/review/service",
     "settings.editor.selected.configurable": "preferences.pluginManager"
