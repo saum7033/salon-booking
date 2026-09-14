@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: ai-assistant
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ai_assistant_db
+    username: postgres
+    password: postgres
+
+  ai:
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        project-id: ${GOOGLE_CLOUD_PROJECT}
+
+        chat:
+          model: gemini-3.6-flash
+
+        embedding:
+          api-key: ${GEMINI_API_KEY}
+          project-id: ${GOOGLE_CLOUD_PROJECT}
+
+          text:
+            model: gemini-embedding-001
+            dimensions: 1536
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        remove-existing-vector-store-table: false
+        dimensions: 1536
+        index-type: NONE
+        distance-type: COSINE_DISTANCE
+
+server:
+  port: 8087
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8070/eureka/
