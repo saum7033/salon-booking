@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: notification
+  main:
+    allow-bean-definition-overriding: true
 
   cloud:
     config:
@@ -13,6 +15,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  rabbitmq:
+    port: 5672
+    host: localhost
+    username: guest
+    password: guest
 
   datasource:
     url: jdbc:postgresql://localhost:5432/notification-db

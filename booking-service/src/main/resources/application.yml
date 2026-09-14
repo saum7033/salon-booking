@@ -8,6 +8,12 @@ spring:
     password: Saumya@70
     driver-class-name: org.postgresql.Driver
 
+  rabbitmq:
+    port: 5672
+    host: localhost
+    username: guest
+    password: guest
+
 server:
   port: 8083
 

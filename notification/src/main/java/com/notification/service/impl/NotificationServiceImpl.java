@@ -20,11 +20,13 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public NotificationDTO createNotification(Notification notification) {
         Notification savedNotificaton = notificationRepository.save(notification);
-        BookingDTO bookingDTO = bookingFeignClient.getBookingById(savedNotificaton.getBookingId()).getBody();
-
-        NotificationDTO notificationDTO = NotificationMapper.toDTO(savedNotificaton,bookingDTO);
-
-        return notificationDTO;
+        try {
+            BookingDTO bookingDTO = bookingFeignClient.getBookingById(savedNotificaton.getBookingId()).getBody();
+            NotificationDTO notificationDTO = NotificationMapper.toDTO(savedNotificaton,bookingDTO);
+            return notificationDTO;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch booking details", e);
+        }
     }
 
     @Override
@@ -44,6 +46,6 @@ public class NotificationServiceImpl implements NotificationService {
                     notification.setIsRead(true);
                     return notificationRepository.save(notification);
                 }
-        ).orElseThrow(()-> new Exception("Notification not found"));
+        ).orElseThrow(()-> new RuntimeException("Notification not found"));
     }
 }

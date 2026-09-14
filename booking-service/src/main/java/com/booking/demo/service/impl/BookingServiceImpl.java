@@ -6,6 +6,7 @@ import com.booking.demo.dto.SalonDTO;
 import com.booking.demo.dto.ServiceDTO;
 import com.booking.demo.dto.UserDTO;
 import com.booking.demo.modal.Booking;
+import com.booking.demo.modal.PaymentOrder;
 import com.booking.demo.modal.SalonReport;
 import com.booking.demo.repository.BookingRepository;
 import com.booking.demo.service.BookingService;
@@ -131,5 +132,12 @@ public class BookingServiceImpl implements BookingService {
         report.setTotalRefund(totalRefund);
         report.setTotalBookings(totalBooking);
         return report;
+    }
+
+    @Override
+    public Booking bookingSuccess(PaymentOrder order) {
+        Booking existingBooking = getBookingById(order.getBookingId());
+        existingBooking.setStatus(BookingStatus.CONFIRMED);
+        return bookingRepository.save(existingBooking);
     }
 }
