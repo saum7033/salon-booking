@@ -16,6 +16,12 @@ spring:
 server:
   port: 8084
 
+  rabbitmq:
+    port: 5672
+    host: localhost
+    username: guest
+    password: guest
+
 razorpay:
   api:
     key: rzp_test_TRG6P3EfWMDgJw

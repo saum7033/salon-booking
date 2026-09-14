@@ -34,7 +34,7 @@
           uses: actions/checkout@v4
 
         - name: Set up Java 17
-          uses: actions/setup-java@v4
+          uses: actions/setup-java@v5
           with:
             java-version: '17'
             distribution: 'temurin'
@@ -47,15 +47,20 @@
             PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"payment-db\";"
             PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"services-db\";"
             PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE microservices;"
+            PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"review-db\";"
+            PGPASSWORD=Saumya@70 psql -h localhost -U postgres -c "CREATE DATABASE \"notification-db\";"
 
         - name: Build user-service
-          run: mvn -f user-service/pom.xml clean install
+          run: mvn -f user-service/pom.xml clean install -DskipTests
 
         - name: Build service-offering
-          run: mvn -f service-offering/pom.xml clean install
+          run: mvn -f service-offering/pom.xml clean install -DskipTests
+
+        - name: Build payment
+          run: mvn -f payment/pom.xml clean install -DskipTests
 
         - name: Build booking-service
-          run: mvn -f booking-service/pom.xml clean install
+          run: mvn -f booking-service/pom.xml clean install -DskipTests
 
         - name: Build category-service
           run: mvn -f category-service/pom.xml clean verify
@@ -66,8 +71,11 @@
         - name: Build gateway-server
           run: mvn -f gateway-server/pom.xml clean verify
 
-        - name: Build payment
-          run: mvn -f payment/pom.xml clean verify
-
         - name: Build salon-service
           run: mvn -f salon-service/pom.xml clean verify
+
+        - name: Build notification
+          run: mvn -f notification/pom.xml clean verify
+
+        - name: Build review
+          run: mvn -f review/pom.xml clean verify

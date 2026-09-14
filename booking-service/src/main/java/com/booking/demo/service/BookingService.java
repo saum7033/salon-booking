@@ -7,6 +7,7 @@ import com.booking.demo.dto.SalonDTO;
 import com.booking.demo.dto.ServiceDTO;
 import com.booking.demo.dto.UserDTO;
 import com.booking.demo.modal.Booking;
+import com.booking.demo.modal.PaymentOrder;
 import com.booking.demo.modal.SalonReport;
 
 import java.time.LocalDate;
@@ -23,4 +24,5 @@ public interface BookingService {
     Booking updateBooking(Long bookingId, BookingStatus status);
     List<Booking> getBookingsByDate(LocalDate dae, Long salonId);
     SalonReport getSalonReport(Long salonId);
+    Booking bookingSuccess(PaymentOrder order);
 }
