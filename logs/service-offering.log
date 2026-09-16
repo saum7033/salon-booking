@@ -1,0 +1,133 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.example:service-offering >--------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:4.1.0:run (default-cli) > test-compile @ service-offering >>>
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ service-offering ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ service-offering ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ service-offering ---
+[INFO] skip non existing resourceDirectory C:\Users\monis\Projects\microservices\service-offering\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ service-offering ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:4.1.0:run (default-cli) < test-compile @ service-offering <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.1.0:run (default-cli) @ service-offering ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-09-16T23:51:02.927+05:30  INFO 10696 --- [service-offering] [  restartedMain] c.e.s.o.ServiceOfferingApplication       : Starting ServiceOfferingApplication using Java 17.0.12 with PID 10696 (C:\Users\monis\Projects\microservices\service-offering\target\classes started by monis in C:\Users\monis\Projects\microservices\service-offering)
+2026-09-16T23:51:02.969+05:30  INFO 10696 --- [service-offering] [  restartedMain] c.e.s.o.ServiceOfferingApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-16T23:51:03.355+05:30  INFO 10696 --- [service-offering] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-16T23:51:03.356+05:30  INFO 10696 --- [service-offering] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-16T23:51:11.653+05:30  INFO 10696 --- [service-offering] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-16T23:51:12.971+05:30  INFO 10696 --- [service-offering] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1197 ms. Found 1 JPA repository interface.
+2026-09-16T23:51:14.293+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=83e6b1f3-bb0a-3be9-966a-2dcaa8906da0
+2026-09-16T23:51:19.353+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8085 (http)
+2026-09-16T23:51:19.457+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-16T23:51:19.458+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-09-16T23:51:19.827+05:30  INFO 10696 --- [service-offering] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 16468 ms
+2026-09-16T23:51:23.007+05:30  INFO 10696 --- [service-offering] [  restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-16T23:51:23.450+05:30  INFO 10696 --- [service-offering] [  restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-09-16T23:51:26.989+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-16T23:51:27.267+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-16T23:51:28.070+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3dbe4b4f
+2026-09-16T23:51:28.076+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-16T23:51:28.405+05:30  INFO 10696 --- [service-offering] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/services-db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.5
+	Default catalog/schema: services-db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-16T23:51:34.923+05:30  INFO 10696 --- [service-offering] [  restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-16T23:51:35.191+05:30  INFO 10696 --- [service-offering] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-16T23:51:35.630+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-16T23:51:36.914+05:30  WARN 10696 --- [service-offering] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-16T23:51:40.132+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'salon-service' URL not provided. Will try picking an instance via load-balancing.
+2026-09-16T23:51:40.434+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'CATEGORY-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2026-09-16T23:51:40.503+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2026-09-16T23:51:43.983+05:30  INFO 10696 --- [service-offering] [  restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-09-16T23:51:44.125+05:30  WARN 10696 --- [service-offering] [  restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-09-16T23:51:44.372+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-09-16T23:51:44.474+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-09-16T23:51:44.496+05:30  INFO 10696 --- [service-offering] [  restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-09-16T23:51:44.528+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-09-16T23:51:44.528+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-09-16T23:51:44.528+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-09-16T23:51:44.528+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-09-16T23:51:44.528+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-09-16T23:51:44.530+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-09-16T23:51:44.530+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-09-16T23:51:47.435+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-09-16T23:51:47.459+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-09-16T23:51:47.472+05:30  INFO 10696 --- [service-offering] [  restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-09-16T23:51:47.484+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1789582907477 with initial instances count: 2
+2026-09-16T23:51:47.496+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SERVICE-OFFERING with eureka with status UP
+2026-09-16T23:51:47.498+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1789582907498, current=UP, previous=STARTING]
+2026-09-16T23:51:47.523+05:30  INFO 10696 --- [service-offering] [  restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SERVICE-OFFERING with eureka with status DOWN
+2026-09-16T23:51:47.524+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1789582907524, current=DOWN, previous=UP]
+2026-09-16T23:51:47.525+05:30  WARN 10696 --- [service-offering] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-09-16T23:51:47.526+05:30  INFO 10696 --- [service-offering] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-OFFERING/saumya:service-offering:8085: registering service...
+2026-09-16T23:51:47.553+05:30  INFO 10696 --- [service-offering] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-16T23:51:47.562+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-16T23:51:47.805+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-16T23:51:47.808+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-09-16T23:51:48.137+05:30  INFO 10696 --- [service-offering] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-OFFERING/saumya:service-offering:8085 - registration status: 204
+2026-09-16T23:51:48.146+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-09-16T23:51:48.386+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SERVICE-OFFERING/saumya:service-offering:8085 - deregister  status: 200
+2026-09-16T23:51:48.389+05:30  INFO 10696 --- [service-offering] [  restartedMain] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-09-16T23:51:48.463+05:30  INFO 10696 --- [service-offering] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-16T23:51:48.626+05:30 ERROR 10696 --- [service-offering] [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8085 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8085 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:33 min
+[INFO] Finished at: 2026-09-16T23:51:48+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.0:run (default-cli) on project service-offering: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
