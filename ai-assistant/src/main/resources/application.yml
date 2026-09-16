@@ -3,9 +3,9 @@ spring:
     name: ai-assistant
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/ai_assistant_db
+    url: jdbc:postgresql://localhost:3306/ai_assistant_db
     username: postgres
-    password: postgres
+    password: Saumya@70
 
   ai:
     google:
